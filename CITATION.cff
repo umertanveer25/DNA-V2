@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software or benchmark artifacts, please cite it as below."
+authors:
+  - family-names: "Anonymous"
+    given-names: "Authors"
+title: "DNA+: True Biological Genomic Sequences with Dynamic Syntactic-Semantic Mapping for Software Requirements Classification"
+version: 2.0.0
+date-released: 2026-09-18
+url: "https://github.com/anonymous/DNA-Plus-Requirements"
+keywords:
+  - "Requirements Engineering"
+  - "Non-Functional Requirements"
+  - "Biological Sequence Analysis"
+  - "Machine Learning"
+  - "Explainable AI (XAI)"
+  - "Natural Language Processing"
