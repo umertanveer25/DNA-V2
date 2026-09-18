@@ -1,0 +1,13 @@
+Algorithm,Accuracy (%),Macro F1 (%)
+Gradient Boosting,90.4,68.19
+KNN (k=7),89.78,74.53
+KNN (k=5),89.47,74.67
+KNN (k=3),89.47,76.63
+Decision Tree,88.24,79.94
+Random Forest,88.24,54.92
+Logistic Regression,88.24,82.34
+AdaBoost,67.8,50.09
+SVM Linear,67.49,67.61
+Multinomial NB,23.84,32.15
+Naive Bayes,20.74,10.63
+SVM RBF,12.38,8.32

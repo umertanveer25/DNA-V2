@@ -1,0 +1,5 @@
+Feature Configuration,Feature Count,Random Forest Acc (%),Gradient Boosting Acc (%)
+1. Baseline NLP (TF-IDF + SBERT only - No DNA),434,57.28,59.13
+2. Paper 1 DNA Representation (4-count vector + NLP),438,85.45,91.33
+3. Our True Genomic Sequences Alone (k-mers + Ratios),23,93.5,93.81
+4. Our Full Fused Model (True Genomic + NLP),457,87.93,91.02

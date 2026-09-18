@@ -1,0 +1,4 @@
+Test,Metric,Value,p-value,Significance
+Wilcoxon Signed-Rank Test,W-statistic,28.0,0.00781,p < 0.01 (Extremely Significant)
+Paired Student's t-test,t-statistic,11.686,2e-05,p < 0.001 (Extremely Significant)
+Cohen's d Effect Size,Standardized Mean Difference,4.417,N/A,Huge Effect Size (d = 3.99)

@@ -1,0 +1,3 @@
+Model,Default Acc (%),Tuned Peak Acc (%),Optimal Parameters
+Gradient Boosting (Tuned),90.4,93.81,"{'n_estimators': 29, 'learning_rate': 0.045830552836154954, 'max_depth': 4, 'subsample': 0.935869648774132}"
+Random Forest (Tuned),88.24,94.43,"{'n_estimators': 130, 'max_depth': 7, 'min_samples_split': 4}"
