@@ -31,6 +31,12 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
   <em><b>Fig. 1:</b> End-to-End Multimodal Pipeline Architecture of the Proposed DNA+ Framework, detailing Stage 1 Input, Stage 2 Multimodal Feature Extraction (23-D Genomic + 50-D TF-IDF + 384-D SBERT), Stage 3 Weighted Concatenation (457-D), Stage 4 Multi-Model 12-Classifier Benchmark Suite, and Stage 5 Dynamic Syntactic Target Prediction with Dual-Tier Explainability (TreeSHAP & LIME).</em>
 </p>
 
+<p align="center">
+  <img src="figures/fig2_codon_landscape.png" alt="Empirical Dinucleotide Codon Transition Landscape and Information Entropy" width="100%"/>
+  <br/>
+  <em><b>Fig. 2:</b> Empirical Dinucleotide Codon Transition Probability Matrix (Panel a) and Information-Theoretic Shannon Entropy Spectrum (Panel b), demonstrating non-random genomic grammar ($H = 3.27$ bits, $R = 18.25\%$) matching natural biological sequence constraints ($p < 0.001$).</em>
+</p>
+
 ```
 [ Natural Language Requirement Text ]
                    │
