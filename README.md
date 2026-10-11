@@ -1,12 +1,13 @@
 # DNA+: True Biological Genomic Sequences with Dynamic Syntactic-Semantic Mapping for Software Requirements Classification
 
+[![Peer Reviewed Audit](https://img.shields.io/badge/Peer%20Review-R1%20%2B%20R2%20Audited-critical.svg)](PEER_REVIEW_DOSSIER.md)
+[![Evaluation Protocol](https://img.shields.io/badge/Protocol-10--Fold%20CV%20%C3%97%2030%20Repeats-blue.svg)](PEER_REVIEW_DOSSIER.md)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Reproducibility](https://img.shields.io/badge/Reproducibility-Verified%20100%25-brightgreen.svg)](reproduce_all.py)
 [![Datasets](https://img.shields.io/badge/Datasets-PROMISE%20%7C%20P--EXP%20%7C%20FNFC-orange.svg)](data/)
-[![ROC AUC](https://img.shields.io/badge/Champion%20ROC--AUC-0.9924-purple.svg)](results/multi_algorithm_roc_summary.csv)
-[![PR AUC](https://img.shields.io/badge/Champion%20PR--AUC-0.9361-red.svg)](results/multi_algorithm_prc_summary.csv)
-[![Statistically Significant](https://img.shields.io/badge/Wilcoxon-p%20%3D%200.00781%20%7C%20d%20%3D%204.42-teal.svg)](results/statistical_significance_tests.csv)
+
+> 📢 **Peer Review Status:** Independent expert peer reviewer reports (Reviewer 1 & Reviewer 2) and technical resolution roadmap are documented in [`PEER_REVIEW_DOSSIER.md`](PEER_REVIEW_DOSSIER.md). The empirical evaluation follows a **10-Fold Stratified Cross-Validation repeated across 30 randomized splits (300 runs per model)** on authentic ground-truth benchmark labels.
 
 ---
 
