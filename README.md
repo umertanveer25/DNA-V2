@@ -37,6 +37,12 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
   <em><b>Fig. 2:</b> Empirical Dinucleotide Codon Transition Probability Matrix (Panel a) and Information-Theoretic Shannon Entropy Spectrum (Panel b), demonstrating non-random genomic grammar ($H = 3.27$ bits, $R = 18.25\%$) matching natural biological sequence constraints ($p < 0.001$).</em>
 </p>
 
+<p align="center">
+  <img src="figures/fig3_dataset_imbalance.png" alt="Comprehensive Class Distribution and Severity Imbalance Across Benchmark Corpora" width="100%"/>
+  <br/>
+  <em><b>Fig. 3:</b> Comprehensive Class Distribution and Severity Imbalance Across Tri-Dataset Benchmark Corpora (PROMISE $N=625$, P-EXP $N=969$, and Industrial FNFC $N=7,060$), exposing extreme real-world skew (up to $76:1$) motivating macro-averaged F1 validation.</em>
+</p>
+
 ```
 [ Natural Language Requirement Text ]
                    │
