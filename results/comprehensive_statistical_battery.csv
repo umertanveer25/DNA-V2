@@ -1,0 +1,9 @@
+Statistical Test Category,Test Name,Test Metric,p-value,Significance Conclusion,Practical Implication
+Normality Pre-Test,Shapiro-Wilk Test,W = 0.8396,0.0985,Normality Assumed (p > 0.05),Validates parametric paired t-test usage
+Parametric Significance,Paired Student's t-test,t = 11.6865,2.37e-05,p < 0.001 (Extremely Significant),Statutory superiority over Paper 1 baseline
+Non-Parametric Significance,Wilcoxon Signed-Rank Test,W = 28.0,0.00781,p < 0.01 (Statistically Significant),Rejects null hypothesis of median equivalence
+Rank-Sum Independence,Mann-Whitney U Test,U = 49.0,0.0010,p < 0.01 (Statistically Significant),Confirms stochastic superiority of DNA+ distribution
+Multi-Corpus Omnibus,Friedman Test,Q = 15.5000,4.31e-04,p < 0.001 (Extremely Significant),"Significant differences across PROMISE, P-EXP & FNFC"
+Standardized Effect Size,Cohen's d,d = 4.4171,N/A,Huge Effect Size (d > 1.20),Performance gain is of massive practical impact
+Unbiased Effect Size,Hedges' g (Corrected),g = 4.1351,N/A,Huge Effect Size (g > 1.20),Robust effect size corrected for sample degrees of freedom
+Non-Parametric Effect Size,Cliff's Delta,delta = 1.0000,N/A,Large / Complete Separation,100% of DNA+ top-tier models dominate Paper 1 models
