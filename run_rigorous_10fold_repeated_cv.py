@@ -129,13 +129,13 @@ def run_repeated_cv(csv_path, text_col, class_col, dataset_name, n_splits=10, n_
         np.save(sbert_cache, X_sbert)
         print(f"[+] Cached SBERT to {sbert_cache}")
 
-    # Define standard competitive classifiers
+    # Define standard competitive classifiers (n_jobs=1 to avoid Windows wmic joblib bug)
     models = {
-        "Random Forest": RandomForestClassifier(n_estimators=100, class_weight='balanced', random_state=42, n_jobs=-1),
+        "Random Forest": RandomForestClassifier(n_estimators=100, class_weight='balanced', random_state=42, n_jobs=1),
         "Gradient Boosting": GradientBoostingClassifier(n_estimators=50, max_depth=3, random_state=42),
-        "Logistic Regression": LogisticRegression(max_iter=1000, class_weight='balanced', random_state=42),
+        "Logistic Regression": LogisticRegression(max_iter=2000, class_weight='balanced', random_state=42),
         "Decision Tree": DecisionTreeClassifier(max_depth=15, class_weight='balanced', random_state=42),
-        "KNN (k=5)": KNeighborsClassifier(n_neighbors=5, n_jobs=-1)
+        "KNN (k=5)": KNeighborsClassifier(n_neighbors=5, n_jobs=1)
     }
 
     # Setup Repeated Stratified K-Fold
