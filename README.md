@@ -43,6 +43,12 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
   <em><b>Fig. 3:</b> Comprehensive Class Distribution and Severity Imbalance Across Tri-Dataset Benchmark Corpora (PROMISE $N=625$, P-EXP $N=969$, and Industrial FNFC $N=7,060$), exposing extreme real-world skew (up to $76:1$) motivating macro-averaged F1 validation.</em>
 </p>
 
+<p align="center">
+  <img src="figures/fig8_multimodal_ablation.png" alt="Component Feature Ablation Analysis Demonstrating Indispensability of Genomic Sequence Profile" width="100%"/>
+  <br/>
+  <em><b>Fig. 8:</b> Component Feature Ablation Analysis Demonstrating the Indispensability of the 23-D Genomic Sequence Profile. Ablating biological sequences triggers an immediate $31.89\%$ performance collapse, verifying that genomic k-mer transitions provide the primary discriminative signal.</em>
+</p>
+
 ```
 [ Natural Language Requirement Text ]
                    │
