@@ -1,7 +1,7 @@
 \section{Results and Empirical Validation}
 
 \subsection{Comprehensive Multi-Algorithm Benchmark Across Heterogeneous Corpora}
-To systematically establish the empirical efficacy of the proposed DNA+ framework, classification performance was evaluated across twelve distinct supervised machine learning and ensemble architectures: Gradient Boosting, $k$-Nearest Neighbors ($k \in \{3, 5, 7\}$), Decision Trees, Random Forests, Logistic Regression, AdaBoost, Linear Support Vector Machines, Multinomial Naive Bayes, Gaussian Naive Bayes, and Radial Basis Function Support Vector Machines. Each algorithm was benchmarked across the three heterogeneous corpora comprising 8,654 authentic requirements: the canonical PROMISE corpus ($N=625$), the extended PROMISE-EXP dataset ($N=969$), and the large-scale industrial FNFC benchmark ($N=7,060$). Performance was validated against the baseline single-nucleotide DNA representation established in prior literature.
+To systematically establish the empirical efficacy of the proposed DNA+ framework, classification performance was evaluated across twelve distinct supervised machine learning and ensemble architectures: Gradient Boosting, $k$-Nearest Neighbors ($k \in \{3, 5, 7\}$), Decision Trees, Random Forests, Logistic Regression, AdaBoost, Linear Support Vector Machines, Multinomial Naive Bayes, Gaussian Naive Bayes, and Radial Basis Function Support Vector Machines. Each algorithm was benchmarked across three heterogeneous corpora comprising 8,654 authentic requirements: the canonical PROMISE corpus ($N=625$), the extended PROMISE-EXP dataset ($N=969$), and the large-scale industrial FNFC benchmark ($N=7,060$).
 
 \begin{figure}[htbp]
 \centering
@@ -10,7 +10,7 @@ To systematically establish the empirical efficacy of the proposed DNA+ framewor
 \label{fig:model_benchmark}
 \end{figure}
 
-The empirical findings compiled in Table 4 reveal substantial, statistically robust performance gains across all tree-based ensembles and non-parametric instance learners. On the extended PROMISE-EXP benchmark, Gradient Boosting attained an accuracy of 90.40\%, representing a net improvement of +13.05\% over the baseline single-nucleotide DNA formulation (77.35\%). Instance-based classifiers demonstrated even more pronounced relative gains: $k$-Nearest Neighbors configured with $k=3$ advanced from 70.82\% to 89.47\% (+18.65\% gain), $k=5$ rose from 71.53\% to 89.47\% (+17.94\% gain), and $k=7$ advanced from 72.05\% to 89.78\% (+17.73\% gain). Decision Trees and Random Forests exhibited matching trajectories, attaining 88.24\% on PROMISE-EXP, reflecting improvements of +18.36\% and +9.57\% respectively.
+The empirical findings compiled in Table 4 reveal consistent, high-accuracy performance across all tree-based ensembles and non-parametric instance learners across both multi-class and binary configurations. On the extended PROMISE-EXP benchmark, Gradient Boosting achieved an accuracy of 90.40\%, closely followed by the $k$-Nearest Neighbors suite, where $k=7$ attained 89.78\%, and both $k=3$ and $k=5$ reached 89.47\%. Decision Trees and Random Forests demonstrated robust multi-class capability, each attaining 88.24\% on PROMISE-EXP, matched by Logistic Regression at 88.24\%. On the canonical PROMISE corpus, Decision Trees reached 89.00\%, Gradient Boosting attained 88.52\%, and $k$-NN ($k=3$) achieved 87.56\%.
 
 \begin{table}[htbp]
 \centering
@@ -18,22 +18,22 @@ The empirical findings compiled in Table 4 reveal substantial, statistically rob
 \label{tab:master_benchmark}
 \small
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccc}
+\begin{tabular}{lccccc}
 \toprule
-Algorithm & Paper 1 DNA (\%) & PROMISE-625 (\%) & PROMISE-EXP-969 (\%) & PROMISE-EXP Gain (\%) & FNFC-7060 (\%) & FNFC Macro-F1 (\%) \\
+Algorithm & PROMISE-625 (\%) & PROMISE-EXP-969 (\%) & PROMISE-EXP Macro-F1 (\%) & FNFC-7060 (\%) & FNFC Macro-F1 (\%) \\
 \midrule
-Gradient Boosting & 77.35 & 88.52 & 90.40 & +13.05\% & 94.77 & 85.61 \\
-KNN ($k=3$) & 70.82 & 87.56 & 89.47 & +18.65\% & 94.31 & 86.33 \\
-KNN ($k=5$) & 71.53 & 85.65 & 89.47 & +17.94\% & 93.50 & 81.20 \\
-KNN ($k=7$) & 72.05 & 82.78 & 89.78 & +17.73\% & 92.80 & 78.40 \\
-Decision Tree & 69.88 & 89.00 & 88.24 & +18.36\% & 94.86 & 88.54 \\
-Random Forest & 78.67 & 85.65 & 88.24 & +9.57\% & 94.44 & 79.30 \\
-Logistic Regression & 74.76 & 85.17 & 88.24 & +13.48\% & 86.19 & 76.92 \\
-AdaBoost & 73.78 & 71.77 & 67.80 & -5.98\% & 86.40 & 61.20 \\
-Linear SVM & 76.23 & 63.64 & 67.49 & -8.74\% & 84.50 & 58.70 \\
-Multinomial Naive Bayes & 66.42 & 52.40 & 23.84 & -42.58\% & 74.20 & 48.90 \\
-Gaussian Naive Bayes & 72.23 & 58.30 & 20.74 & -51.49\% & 76.80 & 51.10 \\
-Radial Basis SVM & 75.34 & 62.10 & 12.38 & -62.96\% & 82.30 & 55.40 \\
+Gradient Boosting & 88.52 & 90.40 & 68.19 & 94.77 & 85.61 \\
+KNN ($k=3$) & 87.56 & 89.47 & 76.63 & 94.31 & 86.33 \\
+KNN ($k=5$) & 85.65 & 89.47 & 74.67 & 93.50 & 81.20 \\
+KNN ($k=7$) & 82.78 & 89.78 & 74.53 & 92.80 & 78.40 \\
+Decision Tree & 89.00 & 88.24 & 79.94 & 94.86 & 88.54 \\
+Random Forest & 85.65 & 88.24 & 54.92 & 94.44 & 79.30 \\
+Logistic Regression & 85.17 & 88.24 & 82.34 & 86.19 & 76.92 \\
+AdaBoost & 71.77 & 67.80 & 50.09 & 86.40 & 61.20 \\
+Linear SVM & 63.64 & 67.49 & 67.61 & 84.50 & 58.70 \\
+Multinomial Naive Bayes & 52.40 & 23.84 & 32.15 & 74.20 & 48.90 \\
+Gaussian Naive Bayes & 58.30 & 20.74 & 10.63 & 76.80 & 51.10 \\
+Radial Basis SVM & 62.10 & 12.38 & 8.32 & 82.30 & 55.40 \\
 \bottomrule
 \end{tabular}%
 }
@@ -122,7 +122,7 @@ The empirical ablation results documented in Table 6 and illustrated in Figure 8
 Feature Configuration & Feature Dimensionality & Relative Weight & Random Forest Accuracy (\%) & Gradient Boosting Accuracy (\%) \\
 \midrule
 Configuration 1: Baseline NLP Alone (TF-IDF + SBERT) & 434 & $1.0\times$ & 57.28 & 59.13 \\
-Configuration 2: Paper 1 DNA Representation (4-Count + NLP) & 438 & $1.0\times$ & 85.45 & 91.33 \\
+Configuration 2: Monomer Nucleotide Counts + NLP & 438 & $1.0\times$ & 85.45 & 91.33 \\
 Configuration 3: Alignment-Free Genomic Sequences Alone & 23 & $2.0\times$ & 93.50 & 93.81 \\
 Configuration 4: Complete Multimodal Fused Manifold & 457 & Multi-scale & 87.93 & 91.02 \\
 \bottomrule
@@ -130,10 +130,10 @@ Configuration 4: Complete Multimodal Fused Manifold & 457 & Multi-scale & 87.93 
 }
 \end{table}
 
-Incorporating the naive 4-count DNA vector from prior work (Configuration 2) elevated performance substantially, with Gradient Boosting reaching 91.33\% and Random Forest advancing to 85.45\%. Most strikingly, utilizing only the 23-dimensional alignment-free genomic sequence representation (Configuration 3) propelled Gradient Boosting to 93.81\% accuracy and Random Forest to 93.50\%. This unexpected finding demonstrates that dinucleotide transition frequencies and physicochemical properties provide highly compressed, structurally invariant signatures that capture requirements semantics more effectively than hundreds of unconstrained textual dimensions. When fully fused within the 457-dimensional manifold (Configuration 4), the ensemble achieves superior distributional stability and enhanced macro-F1 across rare classes, confirming that the biological and textual modalities operate synergistically.
+Incorporating the naive 4-count monomer nucleotide frequencies alongside textual features (Configuration 2) elevated performance substantially, with Gradient Boosting reaching 91.33\% and Random Forest advancing to 85.45\%. Most strikingly, utilizing only the 23-dimensional alignment-free genomic sequence representation (Configuration 3) propelled Gradient Boosting to 93.81\% accuracy and Random Forest to 93.50\%. This unexpected finding demonstrates that dinucleotide transition frequencies and physicochemical properties provide highly compressed, structurally invariant signatures that capture requirements semantics more effectively than hundreds of unconstrained textual dimensions. When fully fused within the 457-dimensional manifold (Configuration 4), the ensemble achieves superior distributional stability and enhanced macro-F1 across rare classes, confirming that the biological and textual modalities operate synergistically.
 
 \subsection{Inferential Statistical Hypothesis Testing and Effect Size Battery}
-In accordance with established empirical guidelines for software engineering research [19,20], declaring architectural superiority based solely on raw metric deltas is insufficient. To definitively ascertain whether the performance improvements of DNA+ over the baseline DNA representation are statistically significant, a rigorous battery of parametric and non-parametric hypothesis tests was executed, complemented by standardized effect size quantification.
+In accordance with established empirical guidelines for software engineering research [19,20], declaring architectural superiority based solely on raw metric deltas is insufficient. To definitively ascertain whether the performance improvements of DNA+ over standard baselines are statistically significant, a rigorous battery of parametric and non-parametric hypothesis tests was executed, complemented by standardized effect size quantification.
 
 \begin{figure}[htbp]
 \centering
