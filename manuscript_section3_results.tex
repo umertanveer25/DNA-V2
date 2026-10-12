@@ -6,7 +6,7 @@ To systematically establish the empirical efficacy of the proposed DNA+ framewor
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig4_model_benchmark.png}
-\caption{Comprehensive performance benchmarking across twelve supervised machine learning and ensemble algorithms evaluated on the tri-corpus suite, demonstrating the decisive accuracy and macro-F1 advantages achieved by tree ensembles and instance learners over traditional probabilistic and kernel classifiers.}
+\caption{Comprehensive performance benchmarking across twelve supervised machine learning and ensemble algorithms evaluated on the tri-corpus suite~\cite{ref1,ref2,ref3}, demonstrating the decisive accuracy and macro-F1 advantages achieved by tree ensembles and instance learners over traditional probabilistic and kernel classifiers.}
 \label{fig:model_benchmark}
 \end{figure}
 
@@ -14,7 +14,7 @@ The empirical findings compiled in Table 4 reveal consistent, high-accuracy perf
 
 \begin{table}[htbp]
 \centering
-\caption{Tri-corpus benchmark performance comparison across 12 supervised and ensemble algorithms.}
+\caption{Tri-corpus benchmark performance comparison across 12 supervised and ensemble algorithms evaluated on PROMISE~\cite{ref1}, PROMISE-EXP~\cite{ref2,ref3}, and industrial FNFC specifications.}
 \label{tab:master_benchmark}
 \small
 \resizebox{\textwidth}{!}{%
@@ -47,7 +47,7 @@ In imbalanced requirements classification, standard classification accuracy can 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig5_roc_curves.png}
-\caption{Multi-class Receiver Operating Characteristic (ROC) curves across representative classification architectures, illustrating macro- and micro-averaged area under the curve metrics and demonstrating superior true positive discrimination at negligible false positive rates.}
+\caption{Multi-class Receiver Operating Characteristic (ROC) curves across representative classification architectures, illustrating macro- and micro-averaged area under the curve metrics and demonstrating superior true positive discrimination at negligible false positive rates under severe distribution skew~\cite{ref17,ref20}.}
 \label{fig:roc_curves}
 \end{figure}
 
@@ -56,7 +56,7 @@ As depicted in Figure 5, all top-tier ensemble classifiers establish expansive R
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig6_prc_curves.png}
-\caption{Multi-class Precision-Recall curves (PRC) across eight representative classifiers, establishing that the proposed multimodal manifold maintains elevated positive predictive value and high recall across severe class imbalance without relying on synthetic oversampling.}
+\caption{Multi-class Precision-Recall curves (PRC) across eight representative classifiers, establishing that the proposed multimodal manifold maintains elevated positive predictive value and high recall across severe class imbalance without relying on synthetic oversampling~\cite{ref16,ref18}.}
 \label{fig:prc_curves}
 \end{figure}
 
@@ -64,7 +64,7 @@ Because ROC curves can mask minority-class classification errors under severe cl
 
 \begin{table}[htbp]
 \centering
-\caption{Diagnostic discrimination calibration across eight representative classification architectures.}
+\caption{Diagnostic discrimination calibration across eight representative classification architectures, contrasting ROC-AUC with precision-recall dynamics under severe class skew~\cite{ref17,ref20}.}
 \label{tab:roc_prc_calibration}
 \small
 \resizebox{\textwidth}{!}{%
@@ -93,7 +93,7 @@ To investigate error distributions and identify boundary confusion between adjac
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig7_confusion_matrix.png}
-\caption{Normalized confusion matrix heatmap of the champion ensemble architecture, displaying dominant diagonal density and minimal off-diagonal dispersion across functional and non-functional requirements categories.}
+\caption{Normalized confusion matrix heatmap of the champion ensemble architecture, displaying dominant diagonal density and minimal off-diagonal dispersion across functional and non-functional requirements categories~\cite{ref1,ref3}.}
 \label{fig:confusion_matrix}
 \end{figure}
 
@@ -105,7 +105,7 @@ To isolate the individual contribution of each representational module within th
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig8_multimodal_ablation.png}
-\caption{Systematic feature ablation analysis isolating the classification performance of pure textual NLP representations, prior single-nucleotide DNA counts, alignment-free genomic features alone, and the full multimodal fused manifold across Random Forest and Gradient Boosting architectures.}
+\caption{Systematic feature ablation analysis isolating the classification performance of pure textual NLP representations, monomer nucleotide counts, alignment-free genomic features alone~\cite{ref9,ref10}, and the full multimodal fused manifold~\cite{ref11} across Random Forest and Gradient Boosting architectures.}
 \label{fig:multimodal_ablation}
 \end{figure}
 
@@ -113,7 +113,7 @@ The empirical ablation results documented in Table 6 and illustrated in Figure 8
 
 \begin{table}[htbp]
 \centering
-\caption{Systematic feature ablation across biological, lexical, and dense semantic representations.}
+\caption{Systematic feature ablation across biological~\cite{ref6,ref7}, lexical, and dense semantic representations~\cite{ref11}.}
 \label{tab:ablation_study}
 \small
 \resizebox{\textwidth}{!}{%
@@ -133,12 +133,12 @@ Configuration 4: Complete Multimodal Fused Manifold & 457 & Multi-scale & 87.93 
 Incorporating the naive 4-count monomer nucleotide frequencies alongside textual features (Configuration 2) elevated performance substantially, with Gradient Boosting reaching 91.33\% and Random Forest advancing to 85.45\%. Most strikingly, utilizing only the 23-dimensional alignment-free genomic sequence representation (Configuration 3) propelled Gradient Boosting to 93.81\% accuracy and Random Forest to 93.50\%. This unexpected finding demonstrates that dinucleotide transition frequencies and physicochemical properties provide highly compressed, structurally invariant signatures that capture requirements semantics more effectively than hundreds of unconstrained textual dimensions. When fully fused within the 457-dimensional manifold (Configuration 4), the ensemble achieves superior distributional stability and enhanced macro-F1 across rare classes, confirming that the biological and textual modalities operate synergistically.
 
 \subsection{Inferential Statistical Hypothesis Testing and Effect Size Battery}
-In accordance with established empirical guidelines for software engineering research [19,20], declaring architectural superiority based solely on raw metric deltas is insufficient. To definitively ascertain whether the performance improvements of DNA+ over standard baselines are statistically significant, a rigorous battery of parametric and non-parametric hypothesis tests was executed, complemented by standardized effect size quantification.
+In accordance with established empirical guidelines for software engineering research~\cite{ref23,ref24,ref25}, declaring architectural superiority based solely on raw metric deltas is insufficient. To definitively ascertain whether the performance improvements of DNA+ over standard baselines are statistically significant, a rigorous battery of parametric and non-parametric hypothesis tests was executed, complemented by standardized effect size quantification.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig10_cv_stability_violins.png}
-\caption{Repeated stratified 10-fold cross-validation stability distributions across 300 independent evaluations, confirming narrow dispersion, absence of overfitting, and superior median accuracy for the DNA+ multimodal framework.}
+\caption{Repeated stratified 10-fold cross-validation stability distributions across 300 independent evaluations, confirming narrow dispersion, absence of overfitting, and superior median accuracy for the DNA+ multimodal framework in accordance with empirical software engineering standards~\cite{ref23,ref25}.}
 \label{fig:cv_stability_violins}
 \end{figure}
 
@@ -146,7 +146,7 @@ Prior to hypothesis testing, the normality of paired performance differences was
 
 \begin{table}[htbp]
 \centering
-\caption{Inferential statistical significance battery, normality verification, and effect size metrics.}
+\caption{Inferential statistical significance battery, normality verification, and effect size metrics following empirical guidelines for software engineering~\cite{ref23,ref24,ref25}.}
 \label{tab:statistical_battery}
 \small
 \resizebox{\textwidth}{!}{%
@@ -177,15 +177,15 @@ To ensure algorithmic transparency and evaluate model behavior against recent ad
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig9_xai_framework.png}
-\caption{Dual-tier explainable artificial intelligence framework: (a) Global TreeSHAP feature importance ranking across the 457-dimensional multimodal manifold, highlighting the dominant attribution of biological base frequencies and dinucleotide transitions, and (b) Local LIME token-level explanation isolating requirement triggers for human auditability.}
+\caption{Dual-tier explainable artificial intelligence framework: (a) Global TreeSHAP feature importance ranking across the 457-dimensional multimodal manifold~\cite{ref21}, highlighting the dominant attribution of biological base frequencies and dinucleotide transitions, and (b) Local LIME token-level explanation isolating requirement triggers for human auditability~\cite{ref22}.}
 \label{fig:xai_framework}
 \end{figure}
 
-The dual-tier XAI architecture provides complementary global and local diagnostic perspectives, as shown in Figure 9. At the global tier, TreeSHAP analysis reveals that biological sequence features exert the highest overall influence across the 457-dimensional manifold. Single-nucleotide frequencies `k1_C` (mean SHAP impact 0.01495) and `k1_A` (0.01466), along with the physicochemical `AT_GC_Ratio` (0.01267), `k1_T` (0.01234), and `GC_Content` (0.01140), occupy the top five positions in global importance, surpassing individual Sentence-BERT dimensions and TF-IDF terms. Among dinucleotide transitions, `k2_AT` (0.00698), `k2_AC` (0.00428), `k2_GA` (0.00269), and `k2_AG` (0.00231) demonstrate substantial attribution, confirming that codon transition boundaries encode critical domain semantics. At the local tier, LIME decomposes individual requirement predictions, highlighting imperative triggers (e.g., ``shall'', ``system'', ``authenticate'') to provide practitioners with verifiable rationale for automated classifications [21,22].
+The dual-tier XAI architecture provides complementary global and local diagnostic perspectives, as shown in Figure 9. At the global tier, TreeSHAP analysis reveals that biological sequence features exert the highest overall influence across the 457-dimensional manifold. Single-nucleotide frequencies `k1_C` (mean SHAP impact 0.01495) and `k1_A` (0.01466), along with the physicochemical `AT_GC_Ratio` (0.01267), `k1_T` (0.01234), and `GC_Content` (0.01140), occupy the top five positions in global importance, surpassing individual Sentence-BERT dimensions and TF-IDF terms. Among dinucleotide transitions, `k2_AT` (0.00698), `k2_AC` (0.00428), `k2_GA` (0.00269), and `k2_AG` (0.00231) demonstrate substantial attribution, confirming that codon transition boundaries encode critical domain semantics. At the local tier, LIME decomposes individual requirement predictions, highlighting imperative triggers (e.g., ``shall'', ``system'', ``authenticate'') to provide practitioners with verifiable rationale for automated classifications~\cite{ref21,ref22}.
 
 \begin{table}[htbp]
 \centering
-\caption{Comparative benchmarking of DNA+ against five premier 2025--2026 state-of-the-art architectures.}
+\caption{Comparative benchmarking of DNA+ against five premier 2025--2026 state-of-the-art architectures~\cite{ref26,ref27,ref28,ref29,ref30}.}
 \label{tab:sota_comparison}
 \small
 \resizebox{\textwidth}{!}{%

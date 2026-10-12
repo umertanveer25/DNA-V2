@@ -11,7 +11,7 @@ where $\mathcal{C}$ denotes the complete set of target classes and $N_c$ represe
 
 \begin{table}[htbp]
 \centering
-\caption{Comprehensive descriptive statistics and class distribution profiles across the benchmark corpora.}
+\caption{Comprehensive descriptive statistics and class distribution profiles across the benchmark corpora, incorporating the canonical PROMISE dataset~\cite{ref1,ref2}, extended PROMISE-EXP~\cite{ref3}, and industrial FNFC specifications.}
 \label{tab:dataset_statistics}
 \small
 \resizebox{\textwidth}{!}{%
@@ -30,7 +30,7 @@ FNFC Industrial & 7,060 & 2 & Functional (6,030, 85.41\%) & Non-Functional (1,03
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig3_dataset_imbalance.png}
-\caption{Comprehensive class frequency distribution and severity imbalance profiles across the tri-dataset benchmark corpora: (a) Canonical PROMISE ($N=625$), (b) Extended PROMISE-EXP ($N=969$), and (c) Industrial FNFC ($N=7,060$), demonstrating real-world distribution skew motivating macro-averaged evaluation.}
+\caption{Comprehensive class frequency distribution and severity imbalance profiles across the tri-dataset benchmark corpora: (a) Canonical PROMISE ($N=625$)~\cite{ref1,ref2}, (b) Extended PROMISE-EXP ($N=969$)~\cite{ref3}, and (c) Industrial FNFC ($N=7,060$), illustrating severe class distribution skew that motivates macro-averaged evaluation under imbalanced learning protocols~\cite{ref17,ref20}.}
 \label{fig:dataset_imbalance}
 \end{figure}
 
@@ -45,7 +45,7 @@ where $b_1$ and $b_2$ represent the primary and auxiliary nucleotide bases deriv
 
 \begin{table}[htbp]
 \centering
-\caption{Dynamic syntactic-semantic dinucleotide codon codebook and linguistic mapping specifications.}
+\caption{Dynamic syntactic-semantic dinucleotide codon codebook and linguistic mapping specifications, formalizing discrete nucleotide pairings according to genomic sequence theory~\cite{ref6,ref8}.}
 \label{tab:codon_codebook}
 \small
 \resizebox{\textwidth}{!}{%
@@ -80,7 +80,7 @@ where $M$ denotes the total number of mapped tokens in requirement $r$. If a ter
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig2_codon_landscape.png}
-\caption{Empirical biological dinucleotide landscape: (a) 16-state dinucleotide transition probability matrix extracted from synthetic software sequences, and (b) Information-theoretic Shannon sequence entropy spectrum ($H=3.27$ bits, $R=18.25\%$) confirming non-random genomic grammar matching biological sequence constraints.}
+\caption{Empirical biological dinucleotide landscape: (a) 16-state dinucleotide transition probability matrix extracted from synthetic software sequences~\cite{ref6}, and (b) Information-theoretic Shannon sequence entropy spectrum ($H=3.27$ bits, $R=18.25\%$)~\cite{ref7} confirming non-random genomic grammar matching biological sequence constraints~\cite{ref8}.}
 \label{fig:codon_landscape}
 \end{figure}
 
@@ -117,7 +117,7 @@ While genomic sequence attributes provide structural and syntactic regularity, t
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig1_system_architecture.png}
-\caption{End-to-end multimodal pipeline architecture of the proposed DNA+ framework: Stage 1 Requirements Ingestion; Stage 2 Feature Extraction (23-D Genomic, 50-D TF-IDF, 384-D SBERT); Stage 3 Weighted Manifold Synthesis (457-D); Stage 4 Multi-Algorithm Benchmark Suite (12 Classifiers); and Stage 5 Explainable Prediction via Dual-Tier TreeSHAP and LIME.}
+\caption{End-to-end multimodal pipeline architecture of the proposed DNA+ framework: Stage 1 Requirements Ingestion; Stage 2 Feature Extraction (23-D Genomic~\cite{ref6,ref7}, 50-D TF-IDF, 384-D SBERT~\cite{ref11}); Stage 3 Weighted Manifold Synthesis (457-D); Stage 4 Multi-Algorithm Benchmark Suite (12 Classifiers); and Stage 5 Explainable Prediction via Dual-Tier TreeSHAP~\cite{ref21} and LIME~\cite{ref22}.}
 \label{fig:system_architecture}
 \end{figure}
 
@@ -140,7 +140,7 @@ where $\|$ denotes horizontal vector concatenation. The $2.0\times$ amplificatio
 
 \begin{table}[htbp]
 \centering
-\caption{Multimodal feature manifold decomposition and dimensionality allocation ($457$-D).}
+\caption{Multimodal feature manifold decomposition and dimensionality allocation ($457$-D), integrating alignment-free biological metrics~\cite{ref9,ref10} with contextual transformer representations~\cite{ref11,ref12}.}
 \label{tab:feature_manifold}
 \small
 \resizebox{\textwidth}{!}{%
