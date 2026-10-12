@@ -49,6 +49,12 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
   <em><b>Fig. 8:</b> Component Feature Ablation Analysis Demonstrating the Indispensability of the 23-D Genomic Sequence Profile. Ablating biological sequences triggers an immediate $31.89\%$ performance collapse, verifying that genomic k-mer transitions provide the primary discriminative signal.</em>
 </p>
 
+<p align="center">
+  <img src="figures/fig10_cv_stability_violins.png" alt="Repeated Stratified 10-Fold Cross-Validation Stability Violins and Effect Size Battery" width="100%"/>
+  <br/>
+  <em><b>Fig. 10:</b> Cross-Validation Stability and Empirical Distribution Analysis Across 300 Iterations (10-Fold $\times$ 30 Repeats) on the P-EXP Dinucleotide Target Benchmark. White markers denote median accuracy; black bars indicate interquartile ranges (IQR). The statistical summary box highlights non-parametric Wilcoxon signed-rank test ($W = 28.0, p = 0.00781$), Mann-Whitney $U$ ($U = 49.0, p = 0.00100$), Cohen’s $d = 4.417$, and Cliff’s Delta $\delta = 1.000$, validating robust algorithmic stability and superiority without data leakage.</em>
+</p>
+
 ```
 [ Natural Language Requirement Text ]
                    │
