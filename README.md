@@ -44,9 +44,39 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
 </p>
 
 <p align="center">
+  <img src="figures/fig4_model_benchmark.png" alt="Multi-Algorithm Performance Benchmark across Datasets" width="100%"/>
+  <br/>
+  <em><b>Fig. 4:</b> Multi-Algorithm Performance Benchmark Across Tri-Dataset Benchmark Corpora (PROMISE, P-EXP, and Industrial FNFC). Grouped bar chart comparing classification accuracy across 12 evaluated machine learning backbones against classical TF-IDF baselines, demonstrating champion Gradient Boosting ($94.77\%$ on FNFC) and Decision Trees ($89.00\%$ on PROMISE).</em>
+</p>
+
+<p align="center">
+  <img src="figures/fig5_roc_curves.png" alt="Diagnostic ROC Curves and Low-FPR Inset" width="100%"/>
+  <br/>
+  <em><b>Fig. 5:</b> Diagnostic Multi-Class Macro-Averaged Receiver Operating Characteristic (ROC) Curves. (Panel a) Macro-level algorithmic comparison across top classifier backbones with high-stringency operational inset ($\text{FPR} \in [0.00, 0.20]$). (Panel b) Per-class dinucleotide separation for champion model, sustaining near-zero false alarms at high sensitivity ($\text{AUC} \ge 0.992$).</em>
+</p>
+
+<p align="center">
+  <img src="figures/fig6_prc_curves.png" alt="Precision-Recall Curves under Class Imbalance" width="100%"/>
+  <br/>
+  <em><b>Fig. 6:</b> Precision-Recall Curves (PRC) Demonstrating Robustness Under Severe Class Distribution Imbalance. (Panel a) Multi-algorithm macro PR-AUC comparison substantially outperforming the empirical random baseline ($AP = 0.111$). (Panel b) Per-class PR profiles for skewed dinucleotide targets highlighting precision retention across rare categories ($AP = 1.000$ on CC, GG, TT).</em>
+</p>
+
+<p align="center">
+  <img src="figures/fig7_confusion_matrix.png" alt="Normalized Confusion Matrix Heatmap" width="85%"/>
+  <br/>
+  <em><b>Fig. 7:</b> Normalized Confusion Matrix Heatmap for Champion Classifier (Gradient Boosting Backbone) Across 9 Dynamic Syntactic-Semantic Dinucleotide Classes. Diagonal elements represent true positive sensitivity rates (up to $1.00$), while off-diagonal elements demonstrate minimal inter-class semantic leakage.</em>
+</p>
+
+<p align="center">
   <img src="figures/fig8_multimodal_ablation.png" alt="Component Feature Ablation Analysis Demonstrating Indispensability of Genomic Sequence Profile" width="100%"/>
   <br/>
   <em><b>Fig. 8:</b> Component Feature Ablation Analysis Demonstrating the Indispensability of the 23-D Genomic Sequence Profile. Ablating biological sequences triggers an immediate $31.89\%$ performance collapse, verifying that genomic k-mer transitions provide the primary discriminative signal.</em>
+</p>
+
+<p align="center">
+  <img src="figures/fig9_xai_framework.png" alt="Dual-Tier Explainable AI Diagnostic Framework" width="100%"/>
+  <br/>
+  <em><b>Fig. 9:</b> Explainable AI (XAI) Dual-Tier Diagnostic Framework. (Panel a) Global Interpretability via TreeSHAP ranking top 15 discriminative features across genomic physicochemical (73-D) and contextual semantic (384-D SBERT) dimensions. (Panel b) Local Instance Attribution via LIME for exemplar target AG confirming token-level fidelity with $97.8\%$ confidence.</em>
 </p>
 
 <p align="center">
@@ -118,24 +148,22 @@ All models evaluated strictly on original empirical data without synthetic resam
 ## 📈 Diagnostic Evaluation Gallery
 
 ### 1. Multi-Algorithm ROC Curve & Dinucleotide Breakdown
-- **Figure 1**: Macro-averaged Receiver Operating Characteristic across all 8 classifier families with high-resolution low-FPR zoom inset.
+- **Fig. 5 (Panel a)**: Macro-averaged Receiver Operating Characteristic across all 8 classifier families with high-resolution low-FPR zoom inset ($\text{FPR} \in [0.00, 0.20]$).
 - **Champion Models**: Random Forest achieves **Macro ROC-AUC = 0.9924**; Gradient Boosting achieves **0.9903**.
-- **Figure 2**: Two-panel comprehensive ROC depicting macro-level algorithmic comparison (Panel A) and per-class dinucleotide separation (Panel B), where minority classes (`CC`, `GG`, `TT`, `CG`) attain **AUC $\ge 0.996$**.
+- **Fig. 5 (Panel b)**: Per-class dinucleotide separation for champion model, where minority classes (`CC`, `GG`, `TT`, `CG`) attain **AUC $\ge 0.985$**.
 
-![Multi-Algorithm ROC](plots/multi_algorithm_roc_curve.png)
-![Two-Panel ROC](plots/roc_comprehensive_two_panel.png)
+![Comprehensive ROC Curves](figures/fig5_roc_curves.png)
 
 ### 2. Multi-Algorithm Precision-Recall Curve (PRC) & Average Precision
 - **Precision-Recall AUC**: In class-imbalanced data, PR-AUC / Average Precision (AP) directly assesses precision across recall thresholds without inflation by true negatives.
 - **Champion Performance**: Gradient Boosting achieves **Macro PR-AUC = 0.9361** (Micro: 0.9563); Random Forest achieves **0.9267** (Micro: 0.9444)—over **8.4x higher than random chance baseline (0.111)**.
 
-![Multi-Algorithm PRC](plots/multi_algorithm_prc_curve.png)
-![Two-Panel PRC](plots/prc_comprehensive_two_panel.png)
+![Comprehensive PRC Curves](figures/fig6_prc_curves.png)
 
 ### 3. Normalized Confusion Matrix Heatmap
 - Visualizes true-positive diagonal concentration for champion Gradient Boosting, confirming clean separation across all dinucleotide classes.
 
-![Confusion Matrix](plots/champion_confusion_matrix_heatmap.png)
+![Normalized Confusion Matrix Heatmap](figures/fig7_confusion_matrix.png)
 
 ---
 
@@ -159,10 +187,10 @@ Ablation confirms the independent contribution of each feature module:
 ## 🔍 Explainable AI (XAI): SHAP & LIME
 
 To substantiate the transparency of biological sequence transformations:
-- **Global SHAP Feature Importance**: Quantifies the global SHAP value distribution of 1-mers, 2-mers, GC-content, and SBERT dimensions using TreeExplainer.
-- **Local LIME Instance Explanations**: Interactive HTML and visual attribution reports for individual requirement classifications, demonstrating which biological words triggered the dinucleotide assignment.
+- **Global SHAP Feature Importance (Panel a)**: Quantifies the global SHAP value distribution of 1-mers, 2-mers, GC-content, and SBERT dimensions using TreeExplainer.
+- **Local LIME Instance Explanations (Panel b)**: Interactive and visual attribution reports for individual requirement classifications, demonstrating which biological tokens triggered the dinucleotide assignment.
 
-![SHAP Importance](plots/shap_feature_importance.png)
+![Dual-Tier XAI Framework](figures/fig9_xai_framework.png)
 
 ---
 
