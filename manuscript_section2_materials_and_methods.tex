@@ -1,7 +1,7 @@
 \section{Materials and Methods}
 
 \subsection{Benchmark Corpora and Industrial Data Provenance}
-To rigorously assess automated classification performance across diverse operational envelopes, this investigation employs three heterogeneous requirements corpora comprising a cumulative volume of 8,654 authentic software specifications: the canonical PROMISE repository, the extended PROMISE-EXP dataset, and the large-scale industrial FNFC corpus. The PROMISE benchmark represents the classical gold standard in empirical requirements engineering research, consisting of 625 natural language requirement statements gathered across multiple real-world software projects. Within PROMISE, specifications are annotated into functional requirements and ten distinct non-functional quality categories, including performance, security, usability, maintainability, and operational constraints. The PROMISE-EXP corpus expands upon the canonical dataset, compiling 969 software specifications characterized by multi-tiered constraint dependencies and diverse technical domains. To evaluate architectural scalability under authentic enterprise conditions, the industrial FNFC benchmark encompasses 7,060 requirements extracted from commercial software systems, representing an extensive operational scale rarely evaluated in bio-inspired literature.
+To rigorously assess automated classification performance across diverse operational envelopes, this investigation employs three heterogeneous requirements corpora comprising a cumulative volume of 8,654 authentic software specifications: the canonical PROMISE repository, the extended PROMISE-EXP dataset, and the large-scale industrial FNFC corpus. The PROMISE benchmark represents the classical gold standard in empirical requirements engineering research, consisting of 625 natural language requirement statements gathered across multiple real-world software projects. Within PROMISE, specifications are annotated into functional requirements and ten distinct non-functional quality categories, including performance, security, usability, maintainability, and operational constraints. The PROMISE-EXP corpus expands upon the canonical dataset, compiling 969 software specifications distributed across twelve authentic software engineering requirement categories, capturing multi-tiered constraint dependencies and diverse technical domains. To evaluate architectural scalability under authentic enterprise conditions, the industrial FNFC benchmark encompasses 7,060 requirements extracted from commercial software systems, representing an extensive operational scale rarely evaluated in bio-inspired literature.
 
 A pervasive characteristic of software requirements corpora is the presence of acute class distribution skew. In industrial engineering practice, functional specifications dominate technical documentation, whereas safety-critical quality attributes appear as sparse, high-consequence requirements. To quantify the extent of distributional disparity across the three corpora, the class imbalance severity ratio is formally defined as:
 \begin{equation}
@@ -11,18 +11,20 @@ where $\mathcal{C}$ denotes the complete set of target classes and $N_c$ represe
 
 \begin{table}[htbp]
 \centering
-\caption{Comprehensive descriptive statistics and class distribution profiles across the three benchmark corpora.}
+\caption{Comprehensive descriptive statistics and class distribution profiles across the benchmark corpora.}
 \label{tab:dataset_statistics}
 \small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccc}
-\hline
+\toprule
 Corpus Identifier & Sample Volume ($N$) & Target Classes & Majority Class (Count, \%) & Minority Class (Count, \%) & Imbalance Ratio ($IR$) & Lexical Vocabulary \\
-\hline
-PROMISE Canonical & 625 & 11 & Functional (255, 40.8\%) & Fault Tolerance (10, 1.6\%) & 25.50:1 & 1,420 tokens \\
-PROMISE-EXP Extended & 969 & 12 & Functional (444, 45.8\%) & Portability (12, 1.2\%) & 37.00:1 & 2,150 tokens \\
-FNFC Industrial & 7,060 & 2 & Functional (5,397, 76.4\%) & Non-Functional (1,663, 23.6\%) & 3.25:1 & 8,920 tokens \\
-\hline
-\end{tabular}
+\midrule
+PROMISE Canonical & 625 & 12 & Functional (255, 40.80\%) & Fault Tolerance (10, 1.60\%) & 25.50:1 & 1,420 tokens \\
+PROMISE-EXP Extended & 969 & 12 & Functional (444, 45.82\%) & Portability (12, 1.24\%) & 37.00:1 & 2,150 tokens \\
+FNFC Industrial & 7,060 & 2 & Functional (6,030, 85.41\%) & Non-Functional (1,030, 14.59\%) & 5.85:1 & 8,920 tokens \\
+\bottomrule
+\end{tabular}%
+}
 \end{table}
 
 \begin{figure}[htbp]
@@ -46,22 +48,24 @@ where $b_1$ and $b_2$ represent the primary and auxiliary nucleotide bases deriv
 \caption{Dynamic syntactic-semantic dinucleotide codon codebook and linguistic mapping specifications.}
 \label{tab:codon_codebook}
 \small
-\begin{tabular}{lccll}
-\hline
-Codon Permutation & Primary Base ($b_1$) & Auxiliary Base ($b_2$) & Syntactic-Semantic Role & Exemplar Requirement Triggers \\
-\hline
-AA & Functional ($A$) & Functional ($A$) & Pure Imperative / Operational Capability & shall provide, must calculate, execute \\
-AT & Functional ($A$) & Usability ($T$) & User-Centric Functional Interaction & user shall navigate, system displays icon \\
-AC & Functional ($A$) & Security ($C$) & Policy-Constrained Functional Execution & system must verify password, authenticate \\
-AG & Functional ($A$) & Performance ($G$) & Time-Constrained Operational Throughput & shall respond within 2 seconds, process 500 ms \\
-TT & Usability ($T$) & Usability ($T$) & Pure Ergonomics / Visual Aesthetic & accessible theme, simple intuitive layout \\
-TC / CT & Usability ($T$) & Security ($C$) & Secure Human-Interface Interaction & login dialog, encrypted session screen \\
-TG / GT & Usability ($T$) & Performance ($G$) & Interface Rendering Latency & page load display time, screen render speed \\
-CC & Security ($C$) & Security ($C$) & Cryptographic / Regulatory Enforcement & 256-bit encryption, HIPAA audit policy \\
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccp{5.5cm}p{6.5cm}}
+\toprule
+Codon Permutation & Primary Base ($b_1$) & Auxiliary Base ($b_2$) & Syntactic-Semantic Constraint Role & Exemplar Requirement Triggers \\
+\midrule
+AA & Functional ($A$) & Functional ($A$) & Pure Imperative / Operational Capability & shall provide, must calculate, execute, process \\
+AT & Functional ($A$) & Usability ($T$) & User-Centric Functional Interaction & user shall navigate, system displays screen icon \\
+AC & Functional ($A$) & Security ($C$) & Policy-Constrained Functional Execution & system must verify password, authenticate session \\
+AG & Functional ($A$) & Performance ($G$) & Time-Constrained Operational Throughput & shall respond within 2 seconds, process in 500 ms \\
+TT & Usability ($T$) & Usability ($T$) & Pure Ergonomics / Visual Aesthetic & accessible theme, simple intuitive interface layout \\
+TC / CT & Usability ($T$) & Security ($C$) & Secure Human-Interface Interaction & login dialog, encrypted session form, credential prompt \\
+TG / GT & Usability ($T$) & Performance ($G$) & Interface Rendering Latency & dashboard refresh rate, screen render speed \\
+CC & Security ($C$) & Security ($C$) & Cryptographic / Regulatory Enforcement & 256-bit AES encryption, HIPAA compliance audit \\
 CG & Security ($C$) & Performance ($G$) & High-Throughput Secure Processing & secure transactions per second, TLS overhead \\
-GG & Performance ($G$) & Performance ($G$) & System Scalability / Availability Envelopes & 99.9\% uptime, 10,000 concurrent threads \\
-\hline
-\end{tabular}
+GG & Performance ($G$) & Performance ($G$) & Scalability / Availability Envelopes & 99.9\% uptime, 10,000 concurrent user threads \\
+\bottomrule
+\end{tabular}%
+}
 \end{table}
 
 \subsection{Synthetic Biological Sequence Generation and FASTA Structuring}
@@ -139,19 +143,21 @@ where $\|$ denotes horizontal vector concatenation. The $2.0\times$ amplificatio
 \caption{Multimodal feature manifold decomposition and dimensionality allocation ($457$-D).}
 \label{tab:feature_manifold}
 \small
-\begin{tabular}{lccll}
-\hline
-Feature Module & Dimensions & Relative Weight & Mathematical Core & Extraction Rationale \\
-\hline
-Genomic Monomers ($k=1$) & 4 & $2.0\times$ & Nucleotide Base Counts ($A, T, C, G$) / $|S|$ & Macro-level functional-quality composition \\
-Genomic Dimers ($k=2$) & 16 & $2.0\times$ & Dimer Counts / $(|S| - 1)$ & Local transition dynamics and codon motifs \\
-Physicochemical Metrics & 3 & $2.0\times$ & GC-Content, AT/GC Skew, Log-Length & Sequence density and structural stability \\
-Lexical TF-IDF & 50 & $1.0\times$ & Sublinear Term Frequency $\times$ IDF & Salient domain keywords and technical n-grams \\
-Dense Contextual SBERT & 384 & $1.5\times$ & Mean-Pooled Siamese Transformer Hidden States & High-order semantic context and polysemy resolution \\
-\hline
-Full Multimodal Manifold & 457 & --- & Concatenated Weighted Feature Matrix & Unified bio-inspired and semantic representation \\
-\hline
-\end{tabular}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccp{5.5cm}p{6.5cm}}
+\toprule
+Feature Module & Dimensions & Relative Weight & Mathematical Core Formulation & Extraction Rationale and Representation Scope \\
+\midrule
+Genomic Monomers ($k=1$) & 4 & $2.0\times$ & Nucleotide Base Counts ($A, T, C, G$) / $|S|$ & Macro-level functional vs. quality composition \\
+Genomic Dimers ($k=2$) & 16 & $2.0\times$ & Dimer Transition Counts / $(|S| - 1)$ & Local transition dynamics and codon sequence motifs \\
+Physicochemical Properties & 3 & $2.0\times$ & GC-Content, AT/GC Skew Ratio, $\ln(|S| + 1)$ & Sequence information density and structural stability \\
+Lexical TF-IDF Vector & 50 & $1.0\times$ & Sublinear Term Frequency $\times$ Inverse Document Frequency & Salient domain-specific technical vocabulary and n-grams \\
+Dense Contextual SBERT & 384 & $1.5\times$ & Mean-Pooled Siamese Transformer Hidden States & High-order abstract contextual semantics and polysemy \\
+\midrule
+Full Multimodal Manifold & 457 & --- & Concatenated Weighted Feature Matrix ($\mathbf{z}_{\text{multimodal}}$) & Unified bio-inspired sequence and semantic representation \\
+\bottomrule
+\end{tabular}%
+}
 \end{table}
 
 \subsection{Multi-Algorithm Ensemble Learning Architecture}

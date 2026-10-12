@@ -37,8 +37,8 @@ cache_y = 'results/y_pexp.npy'
 
 if os.path.exists(cache_x) and os.path.exists(cache_y):
     print(f"[*] Loading cached features from {cache_x}...", flush=True)
-    X = np.load(cache_x)
-    y = np.load(cache_y)
+    X = np.load(cache_x, allow_pickle=True)
+    y = np.load(cache_y, allow_pickle=True)
 else:
     data_path = 'knowledge_base/dynamic_pexp_dinucleotides.csv'
     print(f"[*] Loading raw dataset from: {data_path}", flush=True)

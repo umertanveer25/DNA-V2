@@ -13,7 +13,7 @@ md_lines.append("### 🏆 DNA+ Champion Benchmark Performance Overview")
 md_lines.append("| Classification Task | Target Classes | Evaluation Protocol | Accuracy (%) | Macro-F1 (%) | ROC-AUC | PRC-AUC |")
 md_lines.append("| :--- | :---: | :--- | :---: | :---: | :---: | :---: |")
 md_lines.append("| **FNFC Binary Benchmark** | 2 (FR vs. NFR) | Stratified 10-Fold CV | **94.77%** | **93.90%** | **0.9820** | **0.9780** |")
-md_lines.append("| **P-EXP Exact Benchmark** | 9 Dinucleotide Targets | Repeated Stratified 10-Fold CV (300 Runs) | **90.40% ± 1.25%** | **89.82% ± 1.41%** | **0.9740** | **0.9690** |")
+md_lines.append("| **PROMISE-EXP Exact Benchmark** | 9 Dinucleotide Targets | Repeated Stratified 10-Fold CV (300 Runs) | **90.40% ± 1.25%** | **89.82% ± 1.41%** | **0.9740** | **0.9690** |")
 md_lines.append("\n> **Note:** All 5 SOTA comparison papers curated below report accuracies strictly below DNA+ ($85.10\\% - 89.60\\%$ vs. our $94.77\\% / 90.40\\%$).\n")
 md_lines.append("---\n")
 
@@ -46,7 +46,7 @@ for pillar_name, refs in pillars.items():
 
 md_lines.append("---\n")
 md_lines.append("## Part B: 5 Recent SOTA Papers (2025–2026) for Comparative Benchmarking")
-md_lines.append("All 5 papers are recent peer-reviewed publications (2025 or 2026) in top software engineering and AI venues. Their reported classification accuracy is strictly lower than the DNA+ champion model ($94.77\\%$ FNFC / $90.40\\%$ P-EXP).\n")
+md_lines.append("All 5 papers are recent peer-reviewed publications (2025 or 2026) in top software engineering and AI venues. Their reported classification accuracy is strictly lower than the DNA+ champion model ($94.77\\%$ FNFC / $90.40\\%$ PROMISE-EXP).\n")
 
 md_lines.append("| Rank | Author & Year | Benchmark Model Architecture | Venue | Reported Acc | Reported F1 | DNA+ Margin Delta | Verified DOI |")
 md_lines.append("| :---: | :--- | :--- | :--- | :---: | :---: | :---: | :--- |")
