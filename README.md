@@ -18,7 +18,7 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
 **DNA+** introduces a fundamentally re-engineered paradigm:
 1. **Dynamic Syntactic-Semantic Dinucleotide Mapping**: Replaces static dictionaries with context-aware dimer pairing ($\text{Base}_1 \text{ [Primary Anchor]} + \text{Base}_2 \text{ [Auxiliary Dependency]}$), representing coupled requirement constraints (e.g., $AG$ for Obligation $\leftrightarrow$ Performance, $AC$ for Obligation $\leftrightarrow$ Security).
 2. **True Biological Genomic Sequence Synthesis**: Synthesizes genuine biological sequences from which 1-mer frequencies, 16 dinucleotide 2-mer frequencies, and biochemical traits ($GC$-content, $AT/GC$ ratio, sequence length) are extracted and fused with TF-IDF and SBERT semantic embeddings into a rich 457-dimensional manifold.
-3. **Tri-Dataset Validation ($N=8,654$)**: Rigorously benchmarked across canonical **PROMISE** ($N=625$), extended **P-EXP** ($N=969$), and large-scale industrial **FNFC** ($N=7,060$) without synthetic data distortion (No SMOTE).
+3. **Tri-Dataset Validation ($N=8,654$)**: Rigorously benchmarked across canonical **PROMISE** ($N=625$), extended **PROMISE-EXP** ($N=969$), and large-scale industrial **FNFC** ($N=7,060$) without synthetic data distortion (No SMOTE).
 4. **Massive Empirical Superiority**: Outperforms Paper 1 across all 12 evaluated algorithms by up to **$+24.98\%$**, driving Random Forest and Gradient Boosting up to **$94.77\%$ – $94.86\%$** accuracy, supported by formal Wilcoxon signed-rank significance ($p = 0.00781$) and extreme effect size (Cohen's $d = 4.42$).
 
 ---
@@ -40,13 +40,13 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
 <p align="center">
   <img src="figures/fig3_dataset_imbalance.png" alt="Comprehensive Class Distribution and Severity Imbalance Across Benchmark Corpora" width="100%"/>
   <br/>
-  <em><b>Fig. 3:</b> Comprehensive Class Distribution and Severity Imbalance Across Tri-Dataset Benchmark Corpora (PROMISE $N=625$, P-EXP $N=969$, and Industrial FNFC $N=7,060$), exposing extreme real-world skew (up to $76:1$) motivating macro-averaged F1 validation.</em>
+  <em><b>Fig. 3:</b> Comprehensive Class Distribution and Severity Imbalance Across Tri-Dataset Benchmark Corpora (PROMISE $N=625$, PROMISE-EXP $N=969$, and Industrial FNFC $N=7,060$), exposing extreme real-world skew (up to $76:1$) motivating macro-averaged F1 validation.</em>
 </p>
 
 <p align="center">
   <img src="figures/fig4_model_benchmark.png" alt="Multi-Algorithm Performance Benchmark across Datasets" width="100%"/>
   <br/>
-  <em><b>Fig. 4:</b> Multi-Algorithm Performance Benchmark Across Tri-Dataset Benchmark Corpora (PROMISE, P-EXP, and Industrial FNFC). Grouped bar chart comparing classification accuracy across 12 evaluated machine learning backbones against classical TF-IDF baselines, demonstrating champion Gradient Boosting ($94.77\%$ on FNFC) and Decision Trees ($89.00\%$ on PROMISE).</em>
+  <em><b>Fig. 4:</b> Multi-Algorithm Performance Benchmark Across Tri-Dataset Benchmark Corpora (PROMISE, PROMISE-EXP, and Industrial FNFC). Grouped bar chart comparing classification accuracy across 12 evaluated machine learning backbones against classical TF-IDF baselines, demonstrating champion Gradient Boosting ($94.77\%$ on FNFC) and Decision Trees ($89.00\%$ on PROMISE).</em>
 </p>
 
 <p align="center">
@@ -82,7 +82,7 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
 <p align="center">
   <img src="figures/fig10_cv_stability_violins.png" alt="Repeated Stratified 10-Fold Cross-Validation Stability Violins and Effect Size Battery" width="100%"/>
   <br/>
-  <em><b>Fig. 10:</b> Cross-Validation Stability and Empirical Distribution Analysis Across 300 Iterations (10-Fold $\times$ 30 Repeats) on the P-EXP Dinucleotide Target Benchmark. White markers denote median accuracy; black bars indicate interquartile ranges (IQR). The statistical summary box highlights non-parametric Wilcoxon signed-rank test ($W = 28.0, p = 0.00781$), Mann-Whitney $U$ ($U = 49.0, p = 0.00100$), Cohen’s $d = 4.417$, and Cliff’s Delta $\delta = 1.000$, validating robust algorithmic stability and superiority without data leakage.</em>
+  <em><b>Fig. 10:</b> Cross-Validation Stability and Empirical Distribution Analysis Across 300 Iterations (10-Fold $\times$ 30 Repeats) on the PROMISE-EXP Dinucleotide Target Benchmark. White markers denote median accuracy; black bars indicate interquartile ranges (IQR). The statistical summary box highlights non-parametric Wilcoxon signed-rank test ($W = 28.0, p = 0.00781$), Mann-Whitney $U$ ($U = 49.0, p = 0.00100$), Cohen’s $d = 4.417$, and Cliff’s Delta $\delta = 1.000$, validating robust algorithmic stability and superiority without data leakage.</em>
 </p>
 
 ```
@@ -128,7 +128,7 @@ Software Requirements Engineering (RE) heavily relies on automated classificatio
 
 All models evaluated strictly on original empirical data without synthetic resampling:
 
-| Algorithm | Paper 1 Baseline (%) | PROMISE-625 (%) | P-EXP-969 (%) | FNFC-7060 (%) | Master FNFC Gain | Macro F1 (%) |
+| Algorithm | Paper 1 Baseline (%) | PROMISE-625 (%) | PROMISE-EXP-969 (%) | FNFC-7060 (%) | Master FNFC Gain | Macro F1 (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Gradient Boosting** | 77.35% | 88.52% | 90.40% | **94.77%** | **+17.42%** | **85.61%** |
 | **Random Forest** | 78.67% | 85.65% | 88.24% | **94.44%** | **+15.77%** | **79.30%** |
@@ -201,7 +201,7 @@ B:/Promise/Paper2/
 ├── data/                               # Standardized Requirements Corpus
 │   ├── README.md                       # Complete dataset schemas and provenance
 │   ├── promise_nfr.csv                 # Canonical PROMISE (625 requirements)
-│   ├── p_exp.csv                       # P-EXP Extended (969 requirements)
+│   ├── p_exp.csv                       # PROMISE-EXP Extended (969 requirements)
 │   └── fnfc.csv                        # FNFC Industrial (7,060 requirements)
 ├── knowledge_base/                     # Synthesized Biological Knowledge Bases
 │   ├── README.md                       # Dinucleotide coupling & FASTA sequence schemas

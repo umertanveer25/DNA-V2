@@ -7,7 +7,7 @@
 | Classification Task | Target Classes | Evaluation Protocol | Accuracy (%) | Macro-F1 (%) | ROC-AUC | PRC-AUC |
 | :--- | :---: | :--- | :---: | :---: | :---: | :---: |
 | **FNFC Binary Benchmark** | 2 (FR vs. NFR) | Stratified 10-Fold CV | **94.77%** | **93.90%** | **0.9820** | **0.9780** |
-| **P-EXP Exact Benchmark** | 9 Dinucleotide Targets | Repeated Stratified 10-Fold CV (300 Runs) | **90.40% ± 1.25%** | **89.82% ± 1.41%** | **0.9740** | **0.9690** |
+| **PROMISE-EXP Exact Benchmark** | 9 Dinucleotide Targets | Repeated Stratified 10-Fold CV (300 Runs) | **90.40% ± 1.25%** | **89.82% ± 1.41%** | **0.9740** | **0.9690** |
 
 > **Note:** All 5 SOTA comparison papers curated below report accuracies strictly below DNA+ ($85.10\% - 89.60\%$ vs. our $94.77\% / 90.40\%$).
 
@@ -179,7 +179,7 @@ Organized across the five core architectural pillars of the DNA+ framework. Ever
 ---
 
 ## Part B: 5 Recent SOTA Papers (2025–2026) for Comparative Benchmarking
-All 5 papers are recent peer-reviewed publications (2025 or 2026) in top software engineering and AI venues. Their reported classification accuracy is strictly lower than the DNA+ champion model ($94.77\%$ FNFC / $90.40\%$ P-EXP).
+All 5 papers are recent peer-reviewed publications (2025 or 2026) in top software engineering and AI venues. Their reported classification accuracy is strictly lower than the DNA+ champion model ($94.77\%$ FNFC / $90.40\%$ PROMISE-EXP).
 
 | Rank | Author & Year | Benchmark Model Architecture | Venue | Reported Acc | Reported F1 | DNA+ Margin Delta | Verified DOI |
 | :---: | :--- | :--- | :--- | :---: | :---: | :---: | :--- |
